@@ -13,11 +13,17 @@
 
 ## 1. Introduction
 
-E2E Framework is developed using **WebdriverIO-Typescript**. 
+This Framework is developed using **Playwright-Cucumber-JS**. 
 
-WebdriverIO is a progressive automation framework built to automate modern web and mobile applications. It simplifies the interaction with your app and provides a set of plugins that help you create a scalable, robust and stable test suite. It is using cucumber gherkin feature file for test data and performing actions in the application.
+Playwright is an open-source test automation tool backed by Microsoft. Playwright supports integration with many tools such as Cucumber, Jenkins, Jira, and Cloud Integration with BrowserStack
 
-Current framework is designed to test both Kiosk application as well amplication web app testing with many resusable fucntions.
+Playwright is a progressive automation framework built to automate modern web and mobile applications. It simplifies the interaction with your app and provides a set of plugins that help you create a scalable, robust and stable test suite. It is using cucumber gherkin feature file for test data and performing actions in the application.
+
+Using Playwright with Cucumber makes the framework simpler, more efficient, and readable, as it can use the power of both Playwright and Cucumber. Playwright provides advanced automation capability by supporting the most advanced React, Angular, VueJS, etc. development frameworks. 
+
+On the other hand, Cucumber provides abstraction by hiding all coding complexity. Testers can write the test cases in plain English like language, and non-technical stakeholders can easily understand the test reports. 
+
+It also accelerates the automation encouraging non-technical team members to contribute to the automation. Manual testers can easily learn and perform test automation. Understand how to set up the Playwright Cucumber framework with the following step-by-step guide.
 
 
 ## 2. Prerequisites
@@ -26,30 +32,24 @@ Current framework is designed to test both Kiosk application as well amplication
 1. Git (https://git-scm.com/downloads) 
 2. GitBash(auto installed with #1) / GitHub Desktop (as per your convenience) (GitHub Desktop )
 3. NodeJS LTS version (https://nodejs.org/en/download/)
-4. Access to WAWA Organisation in GitHub to clone repositories (Wawa)
-5. VS Code – Visual studio code should be installed.(https://code.visualstudio.com/download )
+4. VS Code – Visual studio code should be installed.(https://code.visualstudio.com/download )
 
 
 ## 3. Framework Setup
-1. Clone this repository - https://github.com/wawa/e2e-test-automation
+1. Clone this repository - [https://github.com/wawa/e2e-test-automation](https://github.com/venkatrb07/webui-playwright-cucumber-js.git)
 2. Navigate to cloned repository root director in terminal and run “npm install”. After successful installation, "node_modules" folder will get generated in folder structure.
-3. Make sure your local browser version and chromer driver version("chromedriver -v" in cmd) is same
+3. Make sure your all dependecies with mentioned version installed correctly("npx cucumber-js --version" in cmd)
 
 
 ## 4. Run Test Scripts - Non Kiosk
 ### 1. Local run
-1. Navigate to web-e2e-automation folder under repository directory in terminal.  
+1. Navigate to root directory of project in terminal.  
 
 
-2. For Web
-   Selection of browser - Using the capabilities parameter in the wdio.conf.web.local.ts file the browser can be selected and add the respective tag name to be executed.
-   To run - In terminal in root directory type - yarn run wdioweb click enter
-   Specify the path to spec file that you want to run in   - specs: ['./features/E2E/Disclaimer/Disclaimer-Create.feature',] 
-
-3. For Kiosk
-   Selection of browser - Provide kiosk app path in the capabilities parameter in the wdio.conf.lab.tes file and add the respective tag name to be executed.
-   To run - In terminal in root directory type - yarn run wdioweb click enter
-   Specify the path to spec file that you want to run in   - specs: ['./features/E2E/Disclaimer/Disclaimer-Validate.feature',]
+2. For Cucumber-js
+   Selection of browser - Using the common parameter in the cucumber.js file and add the respective tag name to be executed.
+   To run - In terminal in root directory type - npx cucumber-js test
+   Specify the path to features that you want to run in   - ['tests/**/*.feature'] 
    
 
 ## 5. Creating New Tests
@@ -63,34 +63,16 @@ Current framework is designed to test both Kiosk application as well amplication
     ii. In feature file specfic tag cateogory is added like @smoke, @regression, @TC001, @Badgecreate
         These tags are used in the configuration file to execute specific module.
    
-3. i.   The page objects are added inside page objects folder
-   ii.  The step definitions are added inside step defination folder
-   iii. Sanity test scripts are placed inside "sanity" folder
-   
-4. To run the script 
-   Run the script using the command npm run qalocal(For local run) or npm run qacbt(For crossbrowsertesting run) 
-
-=======
-2. Selection of browser
-       Using the capabilities parameter in the wdio.conf.local file the browser can be selected
-3. Terminal  
-        i. To run specific tests in QA /DEV environment  
-           npm run qalocal  
-           npm run devlocal  
-           Specify the path to spec file that you want to run in  
-           specs: ['./test/specs/smoke/smoke-delivery-flow.spec.ts'],  
-        ii. To run all tests  
-           specs: ['./test/specs/**/*.spec.ts'],
+3. i.   The page objects are added inside tests/pageobjects folder
+   ii.  The step definitions are added inside tests/stepDef folder
+   iii. The feature files are added inside tests/features folder
 
 ## 6. Reports
-1. allure reporter is used for Webdriver.io Automation Framework.
-2. Once you run the test run below command to open. 
-   allure open  
- **Note: If allure reporter is not auto generated use the command**  
-          1.allure generate ./E2E_Reports/report –clean  
-          2.allure open
+1. cucumber-html-reporter is used for Playwright-Cucumber-js Framework.
+2. Once you run the test run below command to open.
+   node cucumber-html-reporter.js
 
-## 6. Infrastructure
+## 7. Infrastructure
 
 | Software       | Version | Comment(s)                                  |
 |:---------------|:--------|:--------------------------------------------|
