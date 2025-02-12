@@ -37,6 +37,7 @@ class HomePage {
     async clickDemandezVotreCarte() {
         await expect(await page.locator(`//*[text()='Elle Assure et vous Rassure']`)).toBeVisible()
         await page.click(this.demandezVotreCarte)
+        await page.waitForTimeout(2000)
         await expect(await page.locator(`//*[text()='Souscrivez en quelques minutes']`)).toBeVisible()
     }
 }

@@ -35,11 +35,11 @@ It also accelerates the automation encouraging non-technical team members to con
 
 ## 3. Framework Setup
 
-1. Clone this repository - [https://github.com/wawa/e2e-test-automation](https://github.com/venkatrb07/webui-playwright-cucumber-js.git)
-2. Navigate to cloned repository root director in terminal and run “npm install”. After successful installation, "node_modules" folder will get generated in folder structure.
+1. Clone this repository - [https://github.com/venkatrb07/webui-playwright-cucumber-js.git]
+2. Navigate to cloned repository root director in terminal and run `npm install`. After successful installation, "node_modules" folder will get generated in folder structure.
 3. Make sure your all dependecies with mentioned version installed correctly(`npx cucumber-js --version` in cmd)
 
-## 4. Run Test Scripts - Non Kiosk
+## 4. Run Test Scripts
 
 ### 1. Local run
 
