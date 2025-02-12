@@ -37,7 +37,7 @@ It also accelerates the automation encouraging non-technical team members to con
 
 1. Clone this repository - [https://github.com/wawa/e2e-test-automation](https://github.com/venkatrb07/webui-playwright-cucumber-js.git)
 2. Navigate to cloned repository root director in terminal and run “npm install”. After successful installation, "node_modules" folder will get generated in folder structure.
-3. Make sure your all dependecies with mentioned version installed correctly("npx cucumber-js --version" in cmd)
+3. Make sure your all dependecies with mentioned version installed correctly(`npx cucumber-js --version` in cmd)
 
 ## 4. Run Test Scripts - Non Kiosk
 
@@ -46,7 +46,9 @@ It also accelerates the automation encouraging non-technical team members to con
 1. Navigate to root directory of project in terminal.
 2. For Cucumber-js
    Selection of browser - Using the common parameter in the cucumber.js file and add the respective tag name to be executed.
-   To run - In terminal in root directory type - npx cucumber-js test
+
+   To run - In terminal in root directory type - `npm run cucumberTest`
+
    Specify the path to features that you want to run in   - ['tests/**/*.feature']
 
 ## 5. Creating New Tests
@@ -69,7 +71,8 @@ It also accelerates the automation encouraging non-technical team members to con
 
 1. cucumber-html-reporter is used for Playwright-Cucumber-js Framework.
 2. Once you run the test run below command to open.
-   node cucumber-html-reporter.js
+   
+   `npm run cucumberReport`
 
 ## 7. Infrastructure
 
